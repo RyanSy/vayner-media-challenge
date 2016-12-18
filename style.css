@@ -1,7 +1,3 @@
 .tableItem:hover {
   cursor: move;
 }
-
-.hidden {
-  visibility: hidden;
-}
