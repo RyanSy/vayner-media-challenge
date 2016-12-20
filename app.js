@@ -6,6 +6,7 @@ var root = 'https://jsonplaceholder.typicode.com';
 
 // function to create tables with user and album data
 function createTables(id) {
+  // get user data
   $.ajax({
     url: root + '/users',
     method: 'get',
@@ -17,6 +18,7 @@ function createTables(id) {
     // create table div for user
     $('#user-tables').append('<div class="table-wrapper"><div class="table-name">' + data[0].name + '</div><div class="table-heading"><div class="album-id">ID</div><div class="album-title">Title</div></div><div id="table' + data[0].id + '" class="table-body" ondragover="allowDrop(event)" ondrop="drop(event)"></div></div>');
   }).then(function() {
+    // get album data
     $.ajax({
       url: root + '/albums',
       method: 'get',
@@ -43,8 +45,7 @@ function drag(ev) {
 }
 
 function drop(ev) {
-  // console.log('* drop(ev) called');
-  console.log('ev =>', ev);
+  // console.log('* drop(ev) called =>', ev);
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
@@ -68,12 +69,13 @@ function drop(ev) {
     }
   }).then(function(data) {
     // console.log('* PATCH root/albums/' + albumId + '?userId=' + newUserId, data);
+    // append dropped album to new table & alert user
     $('#table' + data.userId).append('<div id="album' + data.id + '" class="table-row" draggable="true" ondragstart="drag(event)"><div class="album-id">' + data.id + '</div><div class="album-title">' + data.title + '</div></div>');
     alert('Album "' + data.title + '" successfully moved.')
   });
 }
 
-// call createTables() for each user
+// call createTables() for each user to initially load page
 function run() {
   for (var i = 0; i < users.length; i++) {
     createTables(users[i]);
