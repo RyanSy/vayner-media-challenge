@@ -1,3 +1,68 @@
-.tableItem:hover {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, .table-name {
+  text-align: center;
+}
+
+.table-wrapper {
+  width: 45%;
+  overflow: scroll;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.table-row:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.table-row:nth-child(odd) {
+  background-color: #F5F5F5;
+}
+
+.table-heading {
+  font-weight: bolder;
+  font-size: 16px;
+  display: flex;
+  padding-left: 2px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.table-name {
+  font-size: 24px;
+}
+
+.table-row {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-collapse: collapse;
+  margin: 2px;
   cursor: move;
+  height: 96px
+
+}
+
+.album-id, .album-title {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .table-wrapper {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+  }
 }
