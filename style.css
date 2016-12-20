@@ -9,6 +9,7 @@ h1, .table-name {
 }
 
 .table-wrapper {
+  height: 500px;
   width: 45%;
   overflow: scroll;
 }
@@ -36,7 +37,7 @@ h1, .table-name {
   font-size: 16px;
   display: flex;
   padding-left: 2px;
-  border-top: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
 }
 
 .table-name {
@@ -49,7 +50,7 @@ h1, .table-name {
   border-collapse: collapse;
   margin: 2px;
   cursor: move;
-  height: 96px
+  /*height: 96px*/
 
 }
 
