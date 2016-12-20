@@ -9,11 +9,13 @@ h1, .table-name {
 }
 
 .table-wrapper {
-  height: 500px;
   width: 45%;
-  overflow: scroll;
 }
 
+.table-body {
+  height: 480px;
+  overflow: scroll;
+}
 .wrapper {
   width: 100%;
 }
@@ -50,8 +52,6 @@ h1, .table-name {
   border-collapse: collapse;
   margin: 2px;
   cursor: move;
-  /*height: 96px*/
-
 }
 
 .album-id, .album-title {

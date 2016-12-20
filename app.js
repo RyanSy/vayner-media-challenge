@@ -16,7 +16,7 @@ function createTables(id) {
   }).then(function(data) {
     // console.log('* GET root/users/' + id + ' ajax call => ', data);
     // create table div for user
-    $('#user-tables').append('<div class="table-wrapper"><div class="table-name">' + data[0].name + '</div><div class="table-heading"><div class="album-id">ID</div><div class="album-title">Title</div></div><div id="table' + data[0].id + '" class="table-body" ondragover="allowDrop(event)" ondrop="drop(event)"></div></div>');
+    $('#user-tables').append('<div class="table-wrapper"><div class="table-name">' + data[0].name + '\'s Albums</div><div class="table-heading"><div class="album-id">ID</div><div class="album-title">Title</div></div><div id="table' + data[0].id + '" class="table-body" ondragover="allowDrop(event)" ondrop="drop(event)"></div></div>');
   }).then(function() {
     // get album data
     $.ajax({
