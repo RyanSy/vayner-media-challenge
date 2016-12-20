@@ -50,7 +50,7 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
   /* update 'userId' property on the album when dropped onto another table
       when album moved from table 1 to table 2, ev.path.length == 10;
-      when album moved from table 1 to table 2, ev.path.length == 10;
+      when album moved from table 1 to table 2, ev.path.length == 9;
       could not figure out why */
   if (ev.path.length == 10) {
     var newUserId = (ev.path[2].id).slice(5);
